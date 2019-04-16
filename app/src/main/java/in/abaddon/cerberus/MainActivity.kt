@@ -1,7 +1,7 @@
 package `in`.abaddon.cerberus
 
 import `in`.abaddon.cerberus.models.Reading
-import androidx.appcompat.app.AppCompatActivity
+import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 
 class MainActivity : AppCompatActivity() {
