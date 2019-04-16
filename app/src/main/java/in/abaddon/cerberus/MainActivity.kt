@@ -8,7 +8,9 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var viewAdapter: RecyclerView.Adapter<*>
+    private val data: MutableList<String> = arrayListOf("Meow", "Moo", "Pikachu","DRagon", "eMoo", "ePikeachu","DeeRagon")
+    private val viewAdapter = RecyclerAdapter(data)
+
     private lateinit var viewManager: RecyclerView.LayoutManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -16,7 +18,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         viewManager = LinearLayoutManager(this)
-        viewAdapter = RecyclerAdapter(arrayOf("Meow", "Moo", "Pikachu","DRagon", "eMoo", "ePikeachu","DeeRagon"))
 
         recycler_view.apply {
             setHasFixedSize(true)
@@ -25,6 +26,11 @@ class MainActivity : AppCompatActivity() {
         }
 
         recycler_view.addOnScrollListener(onScrollListener)
+
+        fab.setOnClickListener{v ->
+            data.add("Mooo")
+            viewAdapter.notifyDataSetChanged()
+        }
 
     }
 

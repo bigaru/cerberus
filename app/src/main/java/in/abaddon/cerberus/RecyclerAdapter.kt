@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.TextView
 
-class RecyclerAdapter(private val data: Array<String>) : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
+class RecyclerAdapter(private val data: List<String>) : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
 
     class ViewHolder(rowView: CardView) : RecyclerView.ViewHolder(rowView) {
         val title = rowView.findViewById<TextView>(R.id.row_title);
